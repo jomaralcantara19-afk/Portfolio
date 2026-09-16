@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jomar Alcantara — Order Management & Virtual Assistant Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101B2E;
+    --navy-soft:#AEB4C0;
+    --navy-border:rgba(255,255,255,0.14);
+    --cream:#F3F1E9;
+    --ink:#12182A;
+    --ink-soft:#5B6472;
+    --orange:#E08A2C;
+    --orange-deep:#C6791F;
+    --green-bg:#E1F0E3;
+    --green-text:#2E6B45;
+    --border:#E3E0D3;
+    --font:'Inter', -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.55;}
+  a{color:inherit;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 32px;}
+
+  /* TOP BAR */
+  .topbar{background:var(--cream);padding:22px 0;}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .logo{font-weight:800;font-size:19px;}
+  .logo .accent{color:var(--orange-deep);}
+  .topbar-contact{font-size:14px;color:var(--ink-soft);}
+  .topbar-contact a{text-decoration:underline;color:var(--ink-soft);}
+
+  /* HERO */
+  .hero{background:var(--navy);color:#fff;padding:56px 0 64px;}
+  .hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start;}
+  .hero h1{font-size:clamp(30px,4vw,42px);font-weight:800;line-height:1.2;margin:0 0 20px;}
+  .hero h1 .accent{color:var(--orange);}
+  .hero p{color:var(--navy-soft);font-size:16.5px;max-width:52ch;margin:0 0 28px;}
+  .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-primary{background:var(--orange);color:#1a1200;font-weight:700;padding:13px 22px;border-radius:7px;text-decoration:none;font-size:15px;}
+  .btn-outline{border:1px solid var(--navy-border);color:#fff;padding:13px 22px;border-radius:7px;text-decoration:none;font-size:15px;font-weight:600;}
+
+  .queue-card{background:#16233A;border:1px solid var(--navy-border);border-radius:10px;padding:22px;}
+  .queue-title{font-size:12.5px;color:var(--navy-soft);margin-bottom:14px;}
+  .queue-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--navy-border);font-size:14.5px;}
+  .queue-row:first-of-type{border-top:none;}
+  .pill-green{background:var(--green-bg);color:var(--green-text);font-size:12px;font-weight:600;padding:4px 11px;border-radius:20px;}
+
+  /* SECTIONS ON CREAM */
+  .section{padding:54px 0;}
+  .section h2{font-size:26px;font-weight:800;margin:0 0 8px;}
+  .section .subtext{color:var(--ink-soft);font-size:15.5px;margin:0 0 30px;}
+
+  .offer-row{display:grid;grid-template-columns:260px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--border);}
+  .offer-row:first-of-type{border-top:none;}
+  .offer-row h3{font-size:16.5px;font-weight:700;margin:0;}
+  .offer-row p{color:var(--ink-soft);font-size:15px;margin:0;max-width:56ch;}
+
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .work-grid h3{color:var(--orange-deep);font-size:15.5px;font-weight:700;margin:0 0 10px;}
+  .work-grid p{color:var(--ink-soft);font-size:14.5px;margin:0;}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .bg-row{padding:14px 0;border-top:1px solid var(--border);}
+  .bg-row:first-of-type{border-top:none;}
+  .bg-row h4{font-size:15.5px;font-weight:700;margin:0 0 3px;}
+  .bg-row span{font-size:13.5px;color:var(--ink-soft);}
+  .tool-pills{display:flex;flex-wrap:wrap;gap:10px;}
+  .tool-pill{background:#fff;border:1px solid var(--border);border-radius:8px;padding:9px 16px;font-size:14px;font-weight:500;}
+
+  /* CLOSING BANNER */
+  .closing{background:var(--navy);color:#fff;padding:64px 0;}
+  .closing h2{font-size:clamp(24px,3.2vw,32px);font-weight:800;line-height:1.3;margin:0 0 18px;max-width:18ch;}
+  .closing p{color:var(--navy-soft);font-size:16px;max-width:52ch;margin:0 0 26px;}
+  .closing-contact{font-size:14.5px;display:flex;gap:20px;flex-wrap:wrap;}
+  .closing-contact a{text-decoration:underline;}
+
+  .footer{background:var(--cream);text-align:center;padding:20px 0;font-size:13px;color:var(--ink-soft);}
+
+  @media (max-width:760px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .offer-row{grid-template-columns:1fr;gap:8px;}
+    .work-grid{grid-template-columns:1fr;}
+    .split{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <div class="logo">Jomar <span class="accent">Alcantara</span></div>
+      <div class="topbar-contact"><a href="mailto:jomaralcantara19@gmail.com">jomaralcantara19@gmail.com</a> · Taguig, PH</div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>I keep the order pipeline <span class="accent">moving</span> so nothing falls through the cracks.</h1>
+        <p>Order Management &amp; Product Fulfillment Specialist with 3.5+ years handling order processing, CRM data, billing accuracy, and customer support for global teams. Also an aspiring Virtual Assistant — if it involves keeping records straight and nothing slipping through, that's my lane.</p>
+        <div class="hero-buttons">
+          <a class="btn-primary" href="mailto:jomaralcantara19@gmail.com">Get in touch</a>
+          <a class="btn-outline" href="tel:+639686752688">09686752688</a>
+        </div>
+      </div>
+      <div class="queue-card">
+        <div class="queue-title">Today's queue</div>
+        <div class="queue-row"><span>Order exceptions</span><span class="pill-green">Resolved</span></div>
+        <div class="queue-row"><span>Billing discrepancies</span><span class="pill-green">Closed</span></div>
+        <div class="queue-row"><span>Fulfillment queue</span><span class="pill-green">On time</span></div>
+        <div class="queue-row"><span>Records &amp; tracking</span><span class="pill-green">Audit-ready</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>What I can take off your plate</h2>
+      <p class="subtext">Built on real, day-to-day experience — not a list of software I've heard of.</p>
+
+      <div class="offer-row">
+        <h3>Order &amp; fulfillment management</h3>
+        <p>End-to-end order lifecycle execution across enterprise OMS platforms, sustaining a 100% on-time fulfillment rate through precise data entry and proactive exception handling.</p>
+      </div>
+      <div class="offer-row">
+        <h3>Discrepancy resolution</h3>
+        <p>Coordinating directly with logistics, warehousing, and finance to isolate the actual break point and close it — not route it in circles between teams.</p>
+      </div>
+      <div class="offer-row">
+        <h3>Data entry &amp; reporting</h3>
+        <p>Excel-based tracking and reporting, spotting discrepancies before they become bigger problems, and keeping documentation consistent and audit-ready.</p>
+      </div>
+      <div class="offer-row">
+        <h3>Billing &amp; invoice verification</h3>
+        <p>Cross-checking invoices and billing data against source records, flagging mismatches early rather than after they reach a customer.</p>
+      </div>
+      <div class="offer-row">
+        <h3>Customer &amp; client support</h3>
+        <p>Handling inquiries, follow-ups, and account questions across email and chat, drawn from years in travel, telecom, and retail support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <h2>How I work</h2>
+      <div class="work-grid" style="margin-top:26px;">
+        <div>
+          <h3>I flag issues early</h3>
+          <p>I don't wait for a discrepancy to become a customer complaint — I trace it to the exact point of failure before it ships.</p>
+        </div>
+        <div>
+          <h3>I document as I go</h3>
+          <p>Every fix gets a recorded root cause, not just a closed ticket — audit-ready, not reconstructed after the fact.</p>
+        </div>
+        <div>
+          <h3>I close the loop, not just the ticket</h3>
+          <p>If the root cause is systemic, I escalate it as a process fix so it doesn't outlive one incident.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2 style="font-size:22px;">Background</h2>
+          <div class="bg-row">
+            <h4>Order Management Representative</h4>
+            <span>HCL Technologies · 09/2024 – Present</span>
+          </div>
+          <div class="bg-row">
+            <h4>Customer Service – Travel Account</h4>
+            <span>TELUS International PH · 09/2023 – 06/2024</span>
+          </div>
+          <div class="bg-row">
+            <h4>Customer Service – T-Mobile Account</h4>
+            <span>Valor Global Inc. · 05/2023 – 08/2023</span>
+          </div>
+          <div class="bg-row">
+            <h4>Customer Service – Retail Account</h4>
+            <span>Alorica PH · 09/2022 – 04/2023</span>
+          </div>
+        </div>
+        <div>
+          <h2 style="font-size:22px;">Tools I work in daily</h2>
+          <div class="tool-pills">
+            <span class="tool-pill">OMS Platforms</span>
+            <span class="tool-pill">SAP</span>
+            <span class="tool-pill">Salesforce</span>
+            <span class="tool-pill">CRM Platforms</span>
+            <span class="tool-pill">MS Excel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>Looking for reliable order management or virtual assistant support?</h2>
+      <p>I'm currently open to order management roles and remote virtual assistant / operations opportunities — happy to talk through what you need help with.</p>
+      <div class="closing-contact">
+        <a href="mailto:jomaralcantara19@gmail.com">jomaralcantara19@gmail.com</a>
+        <a href="tel:+639686752688">09686752688</a>
+        <span>Taguig, Philippines</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">Jomar Alcantara — Order Management &amp; Virtual Assistant Support</div>
+
+</body>
+</html>
